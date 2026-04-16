@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonsai WebUI — Coming Soon</title>
+    <meta name="description" content="Bonsai WebUI is the upcoming visual interface for managing branches and conversation trees in the Bonsai ecosystem." />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { background: '#0b1326', surface: '#171f33', onSurface: '#dae2fd', primary: '#5af0b3', secondary: '#4cd7f6', outline: '#3c4a42' }, fontFamily: { headline: ['Manrope','sans-serif'], body: ['Manrope','sans-serif'] }}}};
+    </script>
+    <style>body{font-family:'Manrope',sans-serif;background:#0b1326;color:#dae2fd;} .glass-panel{background:rgba(45,52,73,.45);backdrop-filter:blur(16px);border:1px solid rgba(90,240,179,.08);} a{color:#5af0b3;}</style>
+</head>
+<body class="antialiased">
+    <main class="min-h-screen px-6 py-12 max-w-5xl mx-auto">
+        <header class="mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div>
+                <p class="text-xs uppercase tracking-[0.3em] text-secondary font-semibold mb-3">Coming Soon</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Bonsai WebUI</h1>
+                <p class="mt-4 text-on-surface-variant max-w-2xl">The visual branch and conversation manager for Bonsai. It will make agents, workflows, and capture histories easy to inspect and steer.</p>
+            </div>
+            <div class="flex gap-3">
+                <a href="/" class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 font-semibold text-black">Home</a>
+                <a href="https://github.com/TeeLapo6/Bonsai-WebUI" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full border border-outline px-5 py-3 font-semibold">GitHub</a>
+            </div>
+        </header>
+        <section class="glass-panel rounded-3xl p-8 space-y-6">
+            <h2 class="text-2xl font-bold">What Bonsai WebUI will enable</h2>
+            <ul class="space-y-4 text-on-surface-variant">
+                <li>• Visual management of conversation trees and variant branches.</li>
+                <li>• Drag-and-drop orchestration and status-aware workflows.</li>
+                <li>• A shared interface for captures, exports, and agent coordination.</li>
+            </ul>
+            <p class="text-sm text-on-surface-variant">It is the GUI layer for the Bonsai ecosystem, making agentic workflows accessible to builders and operators.</p>
+        </section>
+        <section class="mt-8 text-sm text-on-surface-variant">More pages coming soon: <a href="cli.html" class="underline">CLI</a>, <a href="hub.html" class="underline">Hub</a></section>
+    </main>
+</body>
+</html>

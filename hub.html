@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonsai Hub — Coming Soon</title>
+    <meta name="description" content="Bonsai Hub is the planned centralized knowledge and multi-agent routing layer for the Bonsai ecosystem." />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { background: '#0b1326', surface: '#171f33', onSurface: '#dae2fd', primary: '#5af0b3', secondary: '#4cd7f6', outline: '#3c4a42' }, fontFamily: { headline: ['Manrope','sans-serif'], body: ['Manrope','sans-serif'] }}}};
+    </script>
+    <style>body{font-family:'Manrope',sans-serif;background:#0b1326;color:#dae2fd;} .glass-panel{background:rgba(45,52,73,.45);backdrop-filter:blur(16px);border:1px solid rgba(90,240,179,.08);} a{color:#5af0b3;}</style>
+</head>
+<body class="antialiased">
+    <main class="min-h-screen px-6 py-12 max-w-5xl mx-auto">
+        <header class="mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div>
+                <p class="text-xs uppercase tracking-[0.3em] text-secondary font-semibold mb-3">Coming Soon</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Bonsai Hub</h1>
+                <p class="mt-4 text-on-surface-variant max-w-2xl">The centralized routing and knowledge layer for Bonsai. It will connect captures, agents, and workflows into a single source of truth.</p>
+            </div>
+            <div class="flex gap-3">
+                <a href="/" class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 font-semibold text-black">Home</a>
+                <a href="https://github.com/TeeLapo6/Bonsai-Hub" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full border border-outline px-5 py-3 font-semibold">GitHub</a>
+            </div>
+        </header>
+        <section class="glass-panel rounded-3xl p-8 space-y-6">
+            <h2 class="text-2xl font-bold">What Bonsai Hub will enable</h2>
+            <ul class="space-y-4 text-on-surface-variant">
+                <li>• Unified knowledge graphs from captured conversations and artifacts.</li>
+                <li>• Agent routing and orchestration across multiple execution environments.</li>
+                <li>• A central place to discover, reuse, and collaborate around AI workflows.</li>
+            </ul>
+            <p class="text-sm text-on-surface-variant">It is the long-term collaboration and routing layer for Bonsai, designed to make agentic systems observable and reusable.</p>
+        </section>
+        <section class="mt-8 text-sm text-on-surface-variant">More pages coming soon: <a href="cli.html" class="underline">CLI</a>, <a href="webui.html" class="underline">WebUI</a></section>
+    </main>
+</body>
+</html>
