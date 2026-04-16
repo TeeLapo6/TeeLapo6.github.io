@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Taylor Laporte — AI Developer &amp; Product Builder</title>
+    <meta name="description" content="Builder of modular, local-first AI systems. Creator of Bonsai — an AI operating system for agent-driven workflows." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Taylor Laporte — AI Developer & Product Builder" />
+    <meta property="og:description" content="Building modular, local-first AI systems. Creator of the Bonsai ecosystem." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://taylorlaporte.me" />
+    <meta property="og:image" content="https://taylorlaporte.me/assets/brand/bonsai.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Taylor Laporte — AI Developer & Product Builder" />
+    <meta name="twitter:description" content="Building modular, local-first AI systems. Creator of the Bonsai ecosystem." />
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#0b1326",
+                        "surface": "#0b1326",
+                        "surface-dim": "#0b1326",
+                        "surface-container": "#171f33",
+                        "surface-container-low": "#131b2e",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "on-surface": "#dae2fd",
+                        "on-background": "#dae2fd",
+                        "primary": "#5af0b3",
+                        "primary-container": "#34d399",
+                        "secondary": "#4cd7f6",
+                        "secondary-container": "#03b5d3",
+                        "tertiary": "#5df285",
+                        "outline": "#85948b",
+                        "outline-variant": "#3c4a42",
+                        "on-surface-variant": "#bbcac0",
+                    },
+                    fontFamily: {
+                         "headline": ["Manrope", "sans-serif"],
+                         "body": ["Manrope", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #34d399 0%, #03b5d3 100%);
+        }
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.45);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(90, 240, 179, 0.08);
+        }
+        .project-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        .status-live { background: rgba(52, 211, 153, 0.15); color: #5af0b3; }
+        .status-building { background: rgba(76, 215, 246, 0.15); color: #4cd7f6; }
+        .status-planned { background: rgba(187, 202, 192, 0.12); color: #bbcac0; }
+        a.nav-link { transition: color 0.15s ease; }
+        a.nav-link:hover { color: #5af0b3; }
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(90,240,179,0.15), transparent); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAV -->
+    <nav class="fixed top-0 inset-x-0 z-50 glass-panel border-b border-outline-variant/20">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <img src="assets/brand/bonsai.png" alt="Bonsai" class="h-8 w-8 rounded" />
+                <span class="font-bold text-lg text-on-surface">Taylor Laporte</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm text-on-surface-variant">
+                <a href="#bonsai" class="nav-link">Bonsai</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#stack" class="nav-link">Stack</a>
+                <a href="https://github.com/TeeLapo6" target="_blank" rel="noreferrer" class="nav-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/taylor-laporte/" target="_blank" rel="noreferrer" class="nav-link">LinkedIn</a>
+            </div>
+            <!-- Mobile menu toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-on-surface-variant" aria-label="Menu">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3 text-sm text-on-surface-variant">
+            <a href="#bonsai" class="block nav-link">Bonsai</a>
+            <a href="#projects" class="block nav-link">Projects</a>
+            <a href="#stack" class="block nav-link">Stack</a>
+            <a href="https://github.com/TeeLapo6" target="_blank" rel="noreferrer" class="block nav-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/taylor-laporte/" target="_blank" rel="noreferrer" class="block nav-link">LinkedIn</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-32 pb-16 space-y-24">
+
+        <!-- ========== HERO ========== -->
+        <section class="space-y-8">
+            <div class="space-y-4">
+                <p class="text-sm uppercase tracking-[0.2em] text-primary font-semibold">AI Developer &amp; Product Builder</p>
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface leading-tight">
+                    Building systems for<br/>the <span class="accent-gradient bg-clip-text text-transparent">agentic era</span>
+                </h1>
+                <p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl">
+                    I design modular, local-first AI tools at the intersection of human behavior, product strategy, and orchestration architecture. MBA + Computer Science background.
+                    Currently building in public.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-4">
+                <a href="#bonsai" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm accent-gradient text-background hover:opacity-90 transition-opacity">
+                    Explore Bonsai
+                </a>
+                <a href="https://github.com/TeeLapo6" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/taylor-laporte/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm border border-outline-variant text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors">
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <!-- ========== BONSAI ECOSYSTEM ========== -->
+        <section id="bonsai" class="space-y-10">
+            <div class="flex items-center justify-between">
+                <div class="space-y-2">
+                    <h2 class="text-3xl font-bold text-on-surface">The Bonsai Ecosystem</h2>
+                    <p class="text-on-surface-variant">An AI operating system for agent-driven workflows</p>
+                </div>
+                <span class="status-live text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Alpha Live</span>
+            </div>
+
+            <!-- Capture — Flagship -->
+            <div class="glass-panel rounded-2xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-2/5 accent-gradient p-10 flex flex-col justify-center space-y-5">
+                        <span class="text-xs uppercase tracking-widest text-background/70 font-bold">Now Available</span>
+                        <h3 class="text-4xl font-extrabold text-background">Bonsai Capture</h3>
+                        <p class="text-background/80 leading-relaxed">
+                            AI tools generate incredible knowledge — and then immediately lose it. Bonsai Capture is a browser extension that turns your ChatGPT, Claude, Gemini, and Grok interactions into structured, locally-owned records.
+                        </p>
+                        <div class="pt-2 flex flex-wrap gap-3">
+                            <a href="https://taylorlaporte.me/Bonsai-Capture/" class="inline-block px-6 py-3 rounded-lg font-semibold text-sm bg-background text-primary hover:bg-background/90 transition-colors">
+                                Get the Alpha
+                            </a>
+                            <a href="https://github.com/TeeLapo6/Bonsai-Capture-Ext" target="_blank" rel="noreferrer" class="inline-block px-6 py-3 rounded-lg font-semibold text-sm border border-background/30 text-background hover:bg-background/10 transition-colors">
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-10 space-y-6">
+                        <h4 class="text-xs font-bold text-on-surface-variant uppercase tracking-[0.15em]">The Broader Architecture</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="glass-panel rounded-xl p-5 space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <h5 class="font-bold text-on-surface">Capture</h5>
+                                    <span class="status-live text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Live</span>
+                                </div>
+                                <p class="text-sm text-on-surface-variant">Browser-based ingestion for LLM conversations.</p>
+                            </div>
+                            <div class="glass-panel rounded-xl p-5 space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <h5 class="font-bold text-on-surface">CLI</h5>
+                                    <span class="status-building text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Building</span>
+                                </div>
+                                <p class="text-sm text-on-surface-variant">Rust-powered programmatic orchestration engine.</p>
+                            </div>
+                            <div class="glass-panel rounded-xl p-5 space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <h5 class="font-bold text-on-surface">WebUI</h5>
+                                    <span class="status-building text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Building</span>
+                                </div>
+                                <p class="text-sm text-on-surface-variant">Visual branch management for conversation trees.</p>
+                            </div>
+                            <div class="glass-panel rounded-xl p-5 space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <h5 class="font-bold text-on-surface">Hub</h5>
+                                    <span class="status-planned text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Planned</span>
+                                </div>
+                                <p class="text-sm text-on-surface-variant">Centralized knowledge and multi-agent routing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ========== PROJECTS / THE LAB ========== -->
+        <section id="projects" class="space-y-8">
+            <div class="space-y-2">
+                <h2 class="text-3xl font-bold text-on-surface">The Lab</h2>
+                <p class="text-on-surface-variant">Side quests, experiments, and tools in various stages of life</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Interrupting Cow -->
+                <div class="glass-panel rounded-xl p-6 project-card space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-on-surface text-lg">Interrupting Cow</h3>
+                        <span class="status-building text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Building</span>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Human-in-the-loop orchestration tool for pausing, annotating, and redirecting agent browser sessions in real time.</p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Tooling</span>
+                        <span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Agent Control</span>
+                    </div>
+                </div>
+
+                <!-- BuiltWhere -->
+                <div class="glass-panel rounded-xl p-6 project-card space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-on-surface text-lg">BuiltWhere</h3>
+                        <span class="status-building text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Building</span>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Chrome extension and scan engine that detects the tech stack behind any website — frameworks, analytics, CDNs, and infrastructure.</p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Chrome Extension</span>
+                        <span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Detection</span>
+                    </div>
+                </div>
+
+                <!-- Godric -->
+                <div class="glass-panel rounded-xl p-6 project-card space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-on-surface text-lg">Godric</h3>
+                        <span class="status-planned text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Concept</span>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Exploration into domain-specific AI agent personalities — configurable reasoning profiles tuned for distinct problem classes.</p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Agents</span>
+                        <span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Architecture</span>
+                    </div>
+                </div>
+
+                <!-- 25 Hours -->
+                <div class="glass-panel rounded-xl p-6 project-card space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-on-surface text-lg">25 Hours</h3>
+                        <span class="status-planned text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Concept</span>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Time manipulation and advanced scheduling concepts — rethinking how agents and humans share calendar bandwidth.</p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Productivity</span>
+                        <span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Scheduling</span>
+                    </div>
+                </div>
+
+                <!-- Prompt Trees -->
+                <div class="glass-panel rounded-xl p-6 project-card space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-on-surface text-lg">Prompt Trees</h3>
+                        <span class="status-planned text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Concept</span>
+                    </div>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Semantic chunking and branching frameworks for maintaining continuous context across multi-turn agent workflows.</p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Architecture</span>
+                        <span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Context</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ========== STACK & PHILOSOPHY ========== -->
+        <section id="stack" class="space-y-8">
+            <div class="space-y-2">
+                <h2 class="text-3xl font-bold text-on-surface">Loadout &amp; Philosophy</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="space-y-5">
+                    <h3 class="font-semibold text-lg text-on-surface">Core Stack</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-surface-container-high text-on-surface">Rust</span>
+                        <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-surface-container-high text-on-surface">TypeScript</span>
+                        <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-surface-container-high text-on-surface">React</span>
+                        <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-surface-container-high text-on-surface">Python</span>
+                        <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-surface-container-high text-on-surface">Tailwind</span>
+                        <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-surface-container-high text-on-surface">PHP</span>
+                        <span class="px-3 py-1.5 rounded-lg text-sm font-medium bg-surface-container-high text-on-surface">MySQL</span>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <h3 class="font-semibold text-lg text-on-surface">Design Tenets</h3>
+                    <ul class="space-y-3 text-on-surface-variant text-sm">
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 w-2 h-2 rounded-full bg-primary shrink-0"></span>
+                            <span><strong class="text-on-surface">Local-first computing</strong> — edge execution, user-owned data, no cloud dependency by default</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+                            <span><strong class="text-on-surface">High inspectability</strong> — full provenance, structured exports, transparent orchestration</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 w-2 h-2 rounded-full bg-tertiary shrink-0"></span>
+                            <span><strong class="text-on-surface">Modular architecture</strong> — pluggable agents, composable building blocks, no monoliths</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="border-t border-outline-variant/20 mt-16">
+        <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <img src="assets/brand/bonsai.png" alt="Bonsai" class="h-6 w-6 rounded" />
+                <span class="text-sm text-on-surface-variant">Built by Taylor Laporte. Own your context.</span>
+            </div>
+            <div class="flex items-center gap-6 text-sm text-on-surface-variant">
+                <a href="https://taylorlaporte.me/Bonsai-Capture/" class="nav-link">Bonsai Capture</a>
+                <a href="https://github.com/TeeLapo6" target="_blank" rel="noreferrer" class="nav-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/taylor-laporte/" target="_blank" rel="noreferrer" class="nav-link">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    </script>
+
+    <!-- Cloudflare Web Analytics (privacy-first, no cookies) -->
+    <!-- Replace the token below with your actual Cloudflare beacon token -->
+    <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_CF_TOKEN"}'></script> -->
+
+</body>
+</html>
